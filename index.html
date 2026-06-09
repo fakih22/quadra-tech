@@ -1,0 +1,2304 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KihZzTech - Solusi Teknologi Premium</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #000000;
+            background: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid #E5E5E5;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 1px 20px rgba(0,0,0,0.08);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            background: #DC2626;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: -0.2px;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        .nav-cta {
+            background: #000 !important;
+            color: #fff !important;
+            padding: 10px 24px !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-cta:hover {
+            background: #DC2626 !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: #FFFFFF;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #FEF2F2;
+            border: 1px solid #FECACA;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #DC2626;
+            margin-bottom: 32px;
+            letter-spacing: -0.2px;
+        }
+
+        .hero-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #DC2626;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 24px;
+            color: #000;
+        }
+
+        .hero h1 span {
+            color: #DC2626;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 40px;
+            max-width: 480px;
+            letter-spacing: -0.2px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: #DC2626;
+            color: #fff;
+            padding: 16px 36px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.2px;
+        }
+
+        .btn-primary:hover {
+            background: #B91C1C;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: #000;
+            color: #fff;
+            padding: 16px 36px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.2px;
+        }
+
+        .btn-secondary:hover {
+            background: #1a1a1a;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #000;
+            padding: 15px 35px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 2px solid #000;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.2px;
+        }
+
+        .btn-outline:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 56px;
+            padding-top: 32px;
+            border-top: 1px solid #E5E5E5;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            color: #000;
+        }
+
+        .stat-item h3 .red {
+            color: #DC2626;
+        }
+
+        .stat-item p {
+            font-size: 13px;
+            color: #888;
+            margin-top: 4px;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+        }
+
+        .hero-image-overlay-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .overlay-icon {
+            width: 48px;
+            height: 48px;
+            background: #DC2626;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .overlay-text h4 {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        .overlay-text p {
+            color: rgba(255,255,255,0.6);
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .floating-card {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: #fff;
+            border: 1px solid #E5E5E5;
+            padding: 20px 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            z-index: 3;
+        }
+
+        .floating-card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .floating-card-dot {
+            width: 8px;
+            height: 8px;
+            background: #22C55E;
+        }
+
+        .floating-card-header span {
+            font-size: 11px;
+            color: #22C55E;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .floating-card h4 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .floating-card p {
+            font-size: 12px;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        /* CLIENT LOGOS */
+        .clients {
+            padding: 60px 0;
+            border-top: 1px solid #E5E5E5;
+            border-bottom: 1px solid #E5E5E5;
+            background: #FAFAFA;
+        }
+
+        .clients-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .clients-label {
+            text-align: center;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        .clients-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 64px;
+            flex-wrap: wrap;
+        }
+
+        .client-logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: #CCC;
+            letter-spacing: -1px;
+            transition: color 0.3s;
+            cursor: default;
+        }
+
+        .client-logo:hover {
+            color: #666;
+        }
+
+        .client-logo i {
+            font-size: 32px;
+        }
+
+        /* SECTION STYLES */
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            margin-bottom: 64px;
+        }
+
+        .section-header.center {
+            text-align: center;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #DC2626;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-header.center .section-label {
+            justify-content: center;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: #DC2626;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -2.5px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .section-desc {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #666;
+            letter-spacing: -0.2px;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background: #FFFFFF;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-img-main {
+            width: 100%;
+            aspect-ratio: 5/4;
+            background: #111;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-img-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-img-accent {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            width: 200px;
+            background: #DC2626;
+            padding: 32px;
+            color: white;
+        }
+
+        .about-img-accent h3 {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .about-img-accent p {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        .about-content .section-header {
+            margin-bottom: 32px;
+        }
+
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .about-feature {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .about-feature-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: #FEF2F2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #DC2626;
+            font-size: 18px;
+        }
+
+        .about-feature h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.3px;
+        }
+
+        .about-feature p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* SERVICES */
+        .services {
+            background: #FAFAFA;
+            border-top: 1px solid #E5E5E5;
+            border-bottom: 1px solid #E5E5E5;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        .service-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E5E5;
+            padding: 48px 36px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #DC2626;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+            z-index: 2;
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 22px;
+            margin-bottom: 28px;
+        }
+
+        .service-card:hover .service-icon {
+            background: #DC2626;
+        }
+
+        .service-number {
+            font-size: 64px;
+            font-weight: 900;
+            color: #F5F5F5;
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            letter-spacing: -3px;
+            line-height: 1;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .service-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #DC2626;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.2s;
+        }
+
+        .service-link:hover {
+            gap: 12px;
+        }
+
+        /* WHY CHOOSE US */
+        .why-us {
+            background: #000;
+            color: #fff;
+        }
+
+        .why-us .section-title {
+            color: #fff;
+        }
+
+        .why-us .section-desc {
+            color: #999;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin-top: 64px;
+        }
+
+        .why-card {
+            padding: 48px 32px;
+            border: 1px solid #222;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .why-card:hover {
+            background: #111;
+            border-color: #333;
+        }
+
+        .why-card-number {
+            font-size: 11px;
+            color: #DC2626;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        .why-card-icon {
+            font-size: 32px;
+            color: #DC2626;
+            margin-bottom: 24px;
+        }
+
+        .why-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #888;
+        }
+
+        .why-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin-top: 0;
+            border-top: 1px solid #222;
+        }
+
+        .why-stat {
+            padding: 48px 32px;
+            border-right: 1px solid #222;
+            text-align: center;
+        }
+
+        .why-stat:last-child {
+            border-right: none;
+        }
+
+        .why-stat h3 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            color: #DC2626;
+        }
+
+        .why-stat p {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* PORTFOLIO */
+        .portfolio {
+            background: #FFFFFF;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .portfolio-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid #E5E5E5;
+        }
+
+        .portfolio-card.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: #111;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-card.large .portfolio-img {
+            aspect-ratio: auto;
+            height: 100%;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-card:hover .portfolio-img img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.95));
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover .portfolio-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .portfolio-tag {
+            font-size: 11px;
+            color: #DC2626;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-overlay h3 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .portfolio-overlay p {
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        /* TEAM */
+        .team {
+            background: #FAFAFA;
+            border-top: 1px solid #E5E5E5;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .team-card {
+            background: #fff;
+            border: 1px solid #E5E5E5;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .team-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #E5E5E5;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-social {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            gap: 0;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover .team-social {
+            transform: translateY(0);
+        }
+
+        .team-social a {
+            flex: 1;
+            padding: 12px;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+
+        .team-social a:hover {
+            background: #DC2626;
+        }
+
+        .team-info {
+            padding: 24px;
+        }
+
+        .team-info h3 {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 4px;
+        }
+
+        .team-info p {
+            font-size: 13px;
+            color: #DC2626;
+            font-weight: 600;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: #FFFFFF;
+            border-top: 1px solid #E5E5E5;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border: 1px solid #E5E5E5;
+            padding: 40px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+            border-color: #DC2626;
+        }
+
+        .testimonial-quote {
+            font-size: 48px;
+            color: #DC2626;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 16px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-stars i {
+            color: #FBBF24;
+            font-size: 14px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 28px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 20px;
+            border-top: 1px solid #E5E5E5;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: #E5E5E5;
+            overflow: hidden;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-author-info h4 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+        }
+
+        .testimonial-author-info p {
+            font-size: 12px;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: #DC2626;
+            padding: 100px 0;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 40px;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -2.5px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .cta-section p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: #000;
+            padding: 16px 36px;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-white:hover {
+            background: #f0f0f0;
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: #fff;
+            padding: 15px 35px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-ghost:hover {
+            border-color: #fff;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #FAFAFA;
+            border-top: 1px solid #E5E5E5;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .contact-info-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 24px;
+            background: #fff;
+            border: 1px solid #E5E5E5;
+            transition: all 0.2s;
+        }
+
+        .contact-info-card:hover {
+            border-color: #DC2626;
+        }
+
+        .contact-info-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .contact-info-card:hover .contact-info-icon {
+            background: #DC2626;
+        }
+
+        .contact-info-text h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.2px;
+        }
+
+        .contact-info-text p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: #fff;
+            border: 1px solid #E5E5E5;
+            padding: 48px;
+        }
+
+        .contact-form h3 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .contact-form > p {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 32px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            border: 1px solid #E5E5E5;
+            background: #FAFAFA;
+            color: #000;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #DC2626;
+            background: #fff;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: #DC2626;
+            color: #fff;
+            padding: 16px;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.2px;
+        }
+
+        .form-submit:hover {
+            background: #B91C1C;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 80px 0 0;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 64px;
+            border-bottom: 1px solid #222;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.7;
+            margin-top: 16px;
+            max-width: 300px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 0;
+            margin-top: 24px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            border: 1px solid #333;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .footer-social a:hover {
+            background: #DC2626;
+            border-color: #DC2626;
+            color: #fff;
+        }
+
+        .footer-column h4 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #DC2626;
+        }
+
+        .footer-bottom {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            font-size: 13px;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #DC2626;
+        }
+
+        /* SCROLL ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: #DC2626;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #000;
+        }
+
+        /* MOBILE MENU */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid #E5E5E5;
+            padding: 24px 40px;
+            z-index: 999;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .mobile-nav.open {
+            display: block;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 12px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        /* COUNTER ANIMATION */
+        .counter {
+            display: inline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 48px; letter-spacing: -2px; }
+            .section-title { font-size: 40px; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-stats { grid-template-columns: repeat(2, 1fr); }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                padding-top: 100px;
+            }
+
+            .hero h1 { font-size: 40px; letter-spacing: -1.5px; }
+            .hero-stats { gap: 32px; }
+            .hero-stats .stat-item h3 { font-size: 28px; }
+
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .why-stats { grid-template-columns: repeat(2, 1fr); }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .portfolio-card.large { grid-column: span 1; grid-row: span 1; }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .cta-section h2 { font-size: 36px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .section { padding: 80px 0; }
+            .section-title { font-size: 32px; letter-spacing: -1.5px; }
+            .floating-card { display: none; }
+            .about-img-accent { position: relative; bottom: 0; right: 0; width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 32px; }
+            .hero-buttons { flex-direction: column; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .team-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .clients-grid { gap: 32px; }
+            .contact-form { padding: 32px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-mark">K</div>
+                KihZzTech
+            </a>
+            <ul class="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#tim">Tim</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="#kontak" class="nav-cta">Mulai Proyek</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobile()">
+                <i class="fas fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#beranda" onclick="closeMobile()">Beranda</a>
+        <a href="#tentang" onclick="closeMobile()">Tentang Kami</a>
+        <a href="#layanan" onclick="closeMobile()">Layanan</a>
+        <a href="#portofolio" onclick="closeMobile()">Portofolio</a>
+        <a href="#tim" onclick="closeMobile()">Tim</a>
+        <a href="#testimoni" onclick="closeMobile()">Testimoni</a>
+        <a href="#kontak" onclick="closeMobile()">Kontak</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <div class="hero-badge-dot"></div>
+                    Solusi Teknologi #1 di Indonesia
+                </div>
+                <h1>Membangun Masa Depan <span>Digital</span> Bersama</h1>
+                <p class="hero-desc">Kami merancang dan mengembangkan solusi teknologi enterprise yang mendorong transformasi digital bisnis Anda ke level berikutnya.</p>
+                <div class="hero-buttons">
+                    <a href="#kontak" class="btn-primary">
+                        Konsultasi Gratis <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#layanan" class="btn-outline">
+                        Lihat Layanan
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3><span class="counter" data-target="250">0</span><span class="red">+</span></h3>
+                        <p>Proyek Selesai</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3><span class="counter" data-target="120">0</span><span class="red">+</span></h3>
+                        <p>Klien Puas</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3><span class="counter" data-target="8">0</span><span class="red">+</span></h3>
+                        <p>Tahun Pengalaman</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="floating-card-header">
+                        <div class="floating-card-dot"></div>
+                        <span>PERFORMA</span>
+                    </div>
+                    <h4>99.9%</h4>
+                    <p>Uptime Server</p>
+                </div>
+                <div class="hero-image-container">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Modern Office" />
+                    <div class="hero-image-overlay">
+                        <div class="hero-image-overlay-content">
+                            <div class="overlay-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="overlay-text">
+                                <h4>Lihat Company Profile</h4>
+                                <p>Durasi 2 menit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section class="clients">
+        <div class="clients-container">
+            <p class="clients-label">Dipercaya oleh perusahaan terkemuka di Indonesia</p>
+            <div class="clients-grid">
+                <div class="client-logo"><i class="fab fa-google"></i></div>
+                <div class="client-logo"><i class="fab fa-microsoft"></i></div>
+                <div class="client-logo"><i class="fab fa-aws"></i></div>
+                <div class="client-logo"><i class="fab fa-slack"></i></div>
+                <div class="client-logo"><i class="fab fa-shopify"></i></div>
+                <div class="client-logo"><i class="fab fa-stripe"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="tentang">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <div class="about-img-main">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Tim KihZzTech" />
+                    </div>
+                    <div class="about-img-accent">
+                        <h3>8+</h3>
+                        <p>Tahun Pengalaman</p>
+                    </div>
+                </div>
+                <div class="about-content reveal">
+                    <div class="section-header">
+                        <div class="section-label">Tentang Kami</div>
+                        <h2 class="section-title">Partner Teknologi Terpercaya untuk Bisnis Anda</h2>
+                        <p class="section-desc">KihZzTech didirikan dengan visi untuk menjadi mitra transformasi digital terdepan di Indonesia. Kami menggabungkan keahlian teknis dengan pemahaman bisnis mendalam untuk menghasilkan solusi yang berdampak nyata.</p>
+                    </div>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4>Teknologi Mutakhir</h4>
+                                <p>Menggunakan stack teknologi terbaru dan best practice industri untuk setiap proyek.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4>Tim Ahli Berpengalaman</h4>
+                                <p>Didukung oleh engineer dan designer senior dengan pengalaman di perusahaan teknologi global.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Keamanan Terjamin</h4>
+                                <p>Standar keamanan tingkat enterprise dengan sertifikasi ISO 27001 dan SOC 2.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="layanan">
+        <div class="section-container">
+            <div class="section-header center reveal">
+                <div class="section-label">Layanan Kami</div>
+                <h2 class="section-title">Solusi Teknologi Komprehensif untuk Setiap Kebutuhan</h2>
+                <p class="section-desc">Kami menyediakan layanan end-to-end mulai dari konsultasi, pengembangan, hingga maintenance untuk memastikan bisnis Anda terus berkembang.</p>
+            </div>
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <span class="service-number">01</span>
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Pengembangan Web</h3>
+                    <p>Membangun aplikasi web modern, responsif, dan berperforma tinggi menggunakan React, Next.js, dan teknologi terdepan lainnya.</p>
+                    <a href="#" class="service-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">02</span>
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Aplikasi Mobile</h3>
+                    <p>Pengembangan aplikasi native dan cross-platform untuk iOS dan Android dengan pengalaman pengguna yang luar biasa.</p>
+                    <a href="#" class="service-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">03</span>
+                    <div class="service-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud & Infrastruktur</h3>
+                    <p>Arsitektur cloud yang scalable dan reliable di AWS, Google Cloud, dan Azure dengan optimasi biaya terbaik.</p>
+                    <a href="#" class="service-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">04</span>
+                    <div class="service-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Implementasi solusi kecerdasan buatan dan machine learning untuk mengotomatisasi proses dan meningkatkan efisiensi.</p>
+                    <a href="#" class="service-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">05</span>
+                    <div class="service-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Keamanan Siber</h3>
+                    <p>Audit keamanan, penetration testing, dan implementasi sistem keamanan enterprise untuk melindungi aset digital Anda.</p>
+                    <a href="#" class="service-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <span class="service-number">06</span>
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Data Analytics</h3>
+                    <p>Transformasi data mentah menjadi insight bisnis yang actionable melalui dashboard interaktif dan laporan komprehensif.</p>
+                    <a href="#" class="service-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section why-us" id="mengapa-kami">
+        <div class="section-container">
+            <div class="section-header center reveal">
+                <div class="section-label">Mengapa KihZzTech</div>
+                <h2 class="section-title">Keunggulan yang Membedakan Kami</h2>
+                <p class="section-desc">Kombinasi unik antara keahlian teknis, pemahaman bisnis, dan komitmen terhadap kualitas menjadikan kami partner ideal untuk transformasi digital Anda.</p>
+            </div>
+            <div class="why-grid reveal">
+                <div class="why-card">
+                    <div class="why-card-number">01</div>
+                    <div class="why-card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Delivery Cepat</h3>
+                    <p>Metodologi agile yang terbukti memungkinkan kami deliver proyek 2x lebih cepat dari rata-rata industri.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-number">02</div>
+                    <div class="why-card-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Skalabilitas Tinggi</h3>
+                    <p>Arsitektur yang dirancang untuk berkembang bersama bisnis Anda, dari startup hingga enterprise.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-number">03</div>
+                    <div class="why-card-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Support 24/7</h3>
+                    <p>Tim support dedicated yang siap membantu Anda kapan saja dengan response time rata-rata 15 menit.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-number">04</div>
+                    <div class="why-card-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Transparansi Penuh</h3>
+                    <p>Komunikasi terbuka, progress report berkala, dan akses langsung ke project dashboard real-time.</p>
+                </div>
+            </div>
+            <div class="why-stats reveal">
+                <div class="why-stat">
+                    <h3>99.9<span style="font-size:28px">%</span></h3>
+                    <p>Uptime Terjamin</p>
+                </div>
+                <div class="why-stat">
+                    <h3>2x</h3>
+                    <p>Lebih Cepat Delivery</p>
+                </div>
+                <div class="why-stat">
+                    <h3>40<span style="font-size:28px">%</span></h3>
+                    <p>Efisiensi Biaya</p>
+                </div>
+                <div class="why-stat">
+                    <h3>98<span style="font-size:28px">%</span></h3>
+                    <p>Klien Puas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section portfolio" id="portofolio">
+        <div class="section-container">
+            <div class="section-header center reveal">
+                <div class="section-label">Portofolio</div>
+                <h2 class="section-title">Proyek Terbaru yang Telah Kami Selesaikan</h2>
+                <p class="section-desc">Setiap proyek adalah cerminan dari dedikasi kami terhadap kualitas dan inovasi. Lihat beberapa karya terbaik kami.</p>
+            </div>
+            <div class="portfolio-grid reveal">
+                <div class="portfolio-card large">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Dashboard Analytics" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tag">Enterprise Platform</div>
+                            <h3>Dashboard Analytics untuk Bank Mandiri</h3>
+                            <p>Platform analitik real-time untuk monitoring transaksi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=600&q=80" alt="Mobile App" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tag">Mobile App</div>
+                            <h3>Aplikasi E-Commerce</h3>
+                            <p>Platform belanja online dengan 1M+ pengguna</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="AI Platform" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tag">AI Solution</div>
+                            <h3>Sistem Prediksi AI</h3>
+                            <p>Machine learning untuk prediksi permintaan pasar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Cloud Infrastructure" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tag">Cloud</div>
+                            <h3>Migrasi Cloud Telkom</h3>
+                            <p>Migrasi infrastruktur ke multi-cloud environment</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&q=80" alt="IoT System" />
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-tag">IoT</div>
+                            <h3>Smart Factory System</h3>
+                            <p>Sistem IoT untuk monitoring produksi manufaktur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section team" id="tim">
+        <div class="section-container">
+            <div class="section-header center reveal">
+                <div class="section-label">Tim Kami</div>
+                <h2 class="section-title">Para Ahli di Balik Kesuksesan KihZzTech</h2>
+                <p class="section-desc">Tim kami terdiri dari para profesional berpengalaman yang berdedikasi untuk memberikan solusi teknologi terbaik.</p>
+            </div>
+            <div class="team-grid reveal">
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Ahmad Rizki" />
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Ahmad Rizki</h3>
+                        <p>CEO & Founder</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Sarah Putri" />
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Sarah Putri</h3>
+                        <p>CTO & Co-Founder</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Budi Santoso" />
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Budi Santoso</h3>
+                        <p>Head of Engineering</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Diana Kusuma" />
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Diana Kusuma</h3>
+                        <p>Head of Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials" id="testimoni">
+        <div class="section-container">
+            <div class="section-header center reveal">
+                <div class="section-label">Testimoni</div>
+                <h2 class="section-title">Apa Kata Klien Kami</h2>
+                <p class="section-desc">Kepuasan klien adalah prioritas utama kami. Berikut adalah testimoni dari para klien yang telah mempercayakan proyek mereka kepada KihZzTech.</p>
+            </div>
+            <div class="testimonials-grid reveal">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">KihZzTech berhasil mentransformasi sistem legacy kami menjadi platform modern yang meningkatkan produktivitas tim hingga 60%. Sangat profesional dan komunikatif.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80" alt="Andi Wijaya" />
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Andi Wijaya</h4>
+                            <p>VP of Technology, PT Maju Bersama</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Aplikasi mobile yang dikembangkan KihZzTech mendapat rating 4.8 di App Store. Tim mereka sangat memahami kebutuhan pengguna dan memberikan solusi yang tepat.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80" alt="Rina Marlina" />
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Rina Marlina</h4>
+                            <p>CEO, Tokoku Digital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Migrasi cloud yang dilakukan KihZzTech berjalan mulus tanpa downtime. Biaya operasional kami turun 40% dan performa sistem meningkat drastis. Sangat direkomendasikan!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80" alt="Hendra Gunawan" />
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Hendra Gunawan</h4>
+                            <p>CIO, Nusantara Group</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-container reveal">
+            <h2>Siap Memulai Transformasi Digital Anda?</h2>
+            <p>Konsultasikan kebutuhan teknologi bisnis Anda dengan tim ahli kami. Gratis, tanpa komitmen.</p>
+            <div class="cta-buttons">
+                <a href="#kontak" class="btn-white">
+                    Hubungi Kami Sekarang <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#portofolio" class="btn-ghost">
+                    Lihat Portofolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="kontak">
+        <div class="section-container">
+            <div class="contact-grid">
+                <div class="reveal">
+                    <div class="section-header">
+                        <div class="section-label">Hubungi Kami</div>
+                        <h2 class="section-title">Mari Diskusikan Proyek Anda</h2>
+                        <p class="section-desc">Kami siap membantu Anda mewujudkan ide menjadi solusi teknologi yang berdampak. Hubungi kami untuk konsultasi gratis.</p>
+                    </div>
+                    <div class="contact-info-cards">
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Kantor Pusat</h4>
+                                <p>Jl. Sudirman No. 123, Lantai 15<br>Jakarta Selatan, DKI Jakarta 12190</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Telepon</h4>
+                                <p>+62 21 1234 5678<br>+62 812 3456 7890 (WhatsApp)</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Email</h4>
+                                <p>hello@kihzztech.id<br>sales@kihzztech.id</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <h4>Jam Operasional</h4>
+                                <p>Senin - Jumat: 09.00 - 18.00 WIB<br>Sabtu: 09.00 - 13.00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="contact-form">
+                        <h3>Kirim Pesan</h3>
+                        <p>Isi formulir di bawah ini dan tim kami akan menghubungi Anda dalam 24 jam.</p>
+                        <form onsubmit="handleSubmit(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nama Lengkap *</label>
+                                    <input type="text" placeholder="Masukkan nama Anda" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email *</label>
+                                    <input type="email" placeholder="email@perusahaan.com" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>No. Telepon</label>
+                                    <input type="tel" placeholder="+62 8xx xxxx xxxx">
+                                </div>
+                                <div class="form-group">
+                                    <label>Perusahaan</label>
+                                    <input type="text" placeholder="Nama perusahaan Anda">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Layanan yang Dibutuhkan *</label>
+                                <select required>
+                                    <option value="">Pilih layanan</option>
+                                    <option>Pengembangan Web</option>
+                                    <option>Aplikasi Mobile</option>
+                                    <option>Cloud & Infrastruktur</option>
+                                    <option>AI & Machine Learning</option>
+                                    <option>Keamanan Siber</option>
+                                    <option>Data Analytics</option>
+                                    <option>Konsultasi IT</option>
+                                    <option>Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Detail Proyek *</label>
+                                <textarea placeholder="Ceritakan tentang proyek dan kebutuhan Anda..." required></textarea>
+                            </div>
+                            <button type="submit" class="form-submit">
+                                Kirim Pesan <i class="fas fa-paper-plane" style="margin-left:8px"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="color:#fff">
+                        <div class="logo-mark">K</div>
+                        KihZzTech
+                    </a>
+                    <p>Partner transformasi digital terpercaya untuk bisnis di Indonesia. Kami membangun solusi teknologi yang mendorong pertumbuhan dan inovasi.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#">Pengembangan Web</a></li>
+                        <li><a href="#">Aplikasi Mobile</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                        <li><a href="#">AI & ML</a></li>
+                        <li><a href="#">Keamanan Siber</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Perusahaan</h4>
+                    <ul>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                        <li><a href="#">Partner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Sumber Daya</h4>
+                    <ul>
+                        <li><a href="#">Dokumentasi</a></li>
+                        <li><a href="#">Studi Kasus</a></li>
+                        <li><a href="#">Whitepaper</a></li>
+                        <li><a href="#">Webinar</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Kebijakan Cookie</a></li>
+                        <li><a href="#">SLA</a></li>
+                        <li><a href="#">Lisensi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KihZzTech. Seluruh hak cipta dilindungi.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Kebijakan Privasi</a>
+                    <a href="#">Syarat Layanan</a>
+                    <a href="#">Peta Situs</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Mobile menu
+        function toggleMobile() {
+            const mobileNav = document.getElementById('mobileNav');
+            const menuIcon = document.getElementById('menuIcon');
+            mobileNav.classList.toggle('open');
+            
+            if (mobileNav.classList.contains('open')) {
+                menuIcon.className = 'fas fa-times';
+            } else {
+                menuIcon.className = 'fas fa-bars';
+            }
+        }
+
+        function closeMobile() {
+            document.getElementById('mobileNav').classList.remove('open');
+            document.getElementById('menuIcon').className = 'fas fa-bars';
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Form submit
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('.form-submit');
+            btn.textContent = '✓ Pesan Terkirim!';
+            btn.style.background = '#16A34A';
+            setTimeout(() => {
+                btn.innerHTML = 'Kirim Pesan <i class="fas fa-paper-plane" style="margin-left:8px"></i>';
+                btn.style.background = '#DC2626';
+                e.target.reset();
+            }, 3000);
+        }
+
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 120;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                // Start when in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCounter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(counter);
+            });
+        }
+
+        animateCounters();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 72;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
