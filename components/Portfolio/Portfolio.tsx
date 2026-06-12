@@ -1,5 +1,7 @@
 'use client';
 
+import ScrollReveal from '../Animations/ScrollReveal';
+
 export default function Portfolio() {
   const projects = [
     {
@@ -47,9 +49,9 @@ export default function Portfolio() {
   ];
 
   return (
-    <section className="py-16 md:py-32 bg-white" id="portofolio">
+    <ScrollReveal className="py-16 md:py-32 bg-white" id="portofolio" direction="none">
       <div className="w-full max-w-[1280px] mx-auto px-5 md:px-10">
-        <div className="text-center max-w-[640px] mx-auto mb-12 md:mb-16">
+        <ScrollReveal direction="up" delay={0.1} className="text-center max-w-[640px] mx-auto mb-12 md:mb-16">
           <div className="flex items-center gap-2 justify-center text-xs uppercase tracking-[2px] text-red-600 font-bold mb-4">
             <span className="w-5 h-0.5 bg-red-600"></span>
             Portofolio
@@ -60,32 +62,35 @@ export default function Portfolio() {
           <p className="text-base md:text-[17px] leading-relaxed text-gray-600">
             Dari startup hingga enterprise, kami telah membantu ratusan perusahaan mewujudkan visi digital mereka.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <div 
+            <ScrollReveal 
               key={index}
+              direction="up"
+              delay={0.1 * (index % 3 + 1)}
               className={`relative overflow-hidden cursor-pointer border border-gray-200 group ${project.large ? 'md:col-span-2 md:row-span-2' : ''}`}
             >
               <div className={`w-full ${project.large ? 'h-full min-h-[400px]' : 'aspect-[16/10]'} bg-gray-900 overflow-hidden relative`}>
                 <img 
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/95 to-transparent translate-y-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="text-[11px] text-red-600 font-bold uppercase tracking-[1px] mb-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 z-10">
+                  <div className="text-[11px] text-red-500 font-bold uppercase tracking-[1px] mb-2 bg-black/50 inline-block px-3 py-1 rounded-full backdrop-blur-sm">
                     {project.tag}
                   </div>
-                  <h3 className="text-white text-lg font-bold tracking-tight">{project.title}</h3>
-                  <p className="text-white/60 text-[13px] mt-1.5">{project.description}</p>
+                  <h3 className="text-white text-xl font-bold tracking-tight mb-1">{project.title}</h3>
+                  <p className="text-gray-300 text-[13px]">{project.description}</p>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
-    </section>
+    </ScrollReveal>
   );
 }

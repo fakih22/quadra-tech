@@ -1,5 +1,7 @@
 'use client';
 
+import ScrollReveal from '../Animations/ScrollReveal';
+
 export default function Testimonials() {
   const testimonials = [
     {
@@ -23,9 +25,9 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-16 md:py-32 bg-white border-t border-gray-200" id="testimoni">
+    <ScrollReveal className="py-16 md:py-32 bg-white border-t border-gray-200" id="testimoni" direction="none">
       <div className="w-full max-w-[1280px] mx-auto px-5 md:px-10">
-        <div className="text-center max-w-[640px] mx-auto mb-12 md:mb-16">
+        <ScrollReveal direction="up" delay={0.1} className="text-center max-w-[640px] mx-auto mb-12 md:mb-16">
           <div className="flex items-center gap-2 justify-center text-xs uppercase tracking-[2px] text-red-600 font-bold mb-4">
             <span className="w-5 h-0.5 bg-red-600"></span>
             Testimoni Klien
@@ -36,43 +38,48 @@ export default function Testimonials() {
           <p className="text-base md:text-[17px] leading-relaxed text-gray-600">
             Kepuasan klien adalah prioritas utama kami. Berikut testimoni dari klien yang telah mempercayakan proyek mereka kepada Quadratech.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <div 
+            <ScrollReveal 
               key={index}
-              className="bg-white border border-gray-200 p-10 relative transition-all duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] hover:border-red-600"
+              direction="up"
+              delay={0.1 * (index % 3 + 1)}
             >
-              <div className="text-5xl text-red-600 font-black leading-[1] mb-4 font-serif">"</div>
-              
-              <div className="flex gap-0.5 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <i key={i} className="fas fa-star text-yellow-400 text-sm"></i>
-                ))}
-              </div>
-              
-              <p className="text-[15px] leading-[1.7] text-gray-600 mb-7 italic">
-                {testimonial.quote}
-              </p>
-              
-              <div className="flex items-center gap-4 pt-5 border-t border-gray-200">
-                <div className="w-12 h-12 bg-gray-200 overflow-hidden relative">
-                  <img 
-                    src={testimonial.avatar}
-                    alt={testimonial.author}
-                    className="w-full h-full object-cover"
-                  />
+              <div 
+                className="bg-white border border-gray-200 p-10 relative transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] hover:border-red-600 hover:-translate-y-2 rounded-xl group cursor-pointer h-full"
+              >
+                <div className="text-5xl text-red-600/30 font-black leading-[1] mb-4 font-serif absolute top-6 right-6 transition-transform duration-500 group-hover:scale-125 group-hover:text-red-600/50">&quot;</div>
+                
+                <div className="flex gap-0.5 mb-4 relative z-10">
+                  {[...Array(5)].map((_, i) => (
+                    <i key={i} className="fas fa-star text-yellow-400 text-sm transform transition-transform duration-300 group-hover:scale-110" style={{ transitionDelay: `${i * 50}ms` }}></i>
+                  ))}
                 </div>
-                <div>
-                  <h4 className="text-sm font-bold">{testimonial.author}</h4>
-                  <p className="text-xs text-gray-500 mt-0.5">{testimonial.position}</p>
+                
+                <p className="text-[15px] leading-[1.7] text-gray-600 mb-7 italic relative z-10 group-hover:text-gray-900 transition-colors duration-300">
+                  {testimonial.quote}
+                </p>
+                
+                <div className="flex items-center gap-4 pt-5 border-t border-gray-200 relative z-10">
+                  <div className="w-12 h-12 bg-gray-200 overflow-hidden relative rounded-full ring-2 ring-transparent group-hover:ring-red-600 transition-all duration-300">
+                    <img 
+                      src={testimonial.avatar}
+                      alt={testimonial.author}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold group-hover:text-red-600 transition-colors duration-300">{testimonial.author}</h4>
+                    <p className="text-xs text-gray-500 mt-0.5">{testimonial.position}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
-    </section>
+    </ScrollReveal>
   );
 }

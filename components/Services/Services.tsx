@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import ScrollReveal from '../Animations/ScrollReveal';
 
 interface Service {
   number: string;
@@ -274,9 +275,9 @@ export default function Services() {
 
   return (
     <>
-      <section className="py-16 md:py-32 bg-gray-50 border-t border-b border-gray-200" id="layanan">
-        <div className="w-full max-w-[1280px] mx-auto px-5 md:px-10">
-          <div className="text-center max-w-[640px] mx-auto mb-12 md:mb-16">
+      <ScrollReveal className="py-16 md:py-32 bg-gray-50 border-t border-b border-gray-200" direction="none">
+        <div className="w-full max-w-[1280px] mx-auto px-5 md:px-10" id="layanan">
+          <ScrollReveal direction="up" delay={0.1} className="text-center max-w-[640px] mx-auto mb-12 md:mb-16">
             <div className="flex items-center gap-2 justify-center text-xs uppercase tracking-[2px] text-red-600 font-bold mb-4">
               <span className="w-5 h-0.5 bg-red-600"></span>
               Layanan Kami
@@ -287,34 +288,39 @@ export default function Services() {
             <p className="text-base md:text-[17px] leading-relaxed text-gray-600">
               Layanan end-to-end dari konsultasi hingga deployment, memastikan bisnis Anda tetap unggul dalam lanskap digital.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <div 
+              <ScrollReveal 
                 key={index}
-                className="bg-white border border-gray-200 p-8 md:p-12 md:px-9 transition-all duration-300 relative overflow-hidden group hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:z-[2] before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-[3px] before:bg-red-600 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100 cursor-pointer"
-                onClick={() => setSelectedService(service)}
+                direction="up" 
+                delay={0.1 * (index % 3 + 1)} // Staggered delay per row
               >
-                <span className="text-[64px] font-black text-gray-100 absolute top-5 right-6 tracking-tight leading-none">
-                  {service.number}
-                </span>
-                
-                <div className="w-14 h-14 bg-black flex items-center justify-center text-white text-[22px] mb-7 transition-colors duration-300 group-hover:bg-red-600">
-                  <i className={`fas ${service.icon}`}></i>
+                <div 
+                  className="bg-white border border-gray-200 p-8 md:p-12 md:px-9 transition-all duration-300 relative overflow-hidden group hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:z-[2] before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-[3px] before:bg-red-600 before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100 cursor-pointer h-full"
+                  onClick={() => setSelectedService(service)}
+                >
+                  <span className="text-[64px] font-black text-gray-100 absolute top-5 right-6 tracking-tight leading-none transition-transform duration-300 group-hover:scale-110 group-hover:text-gray-200">
+                    {service.number}
+                  </span>
+                  
+                  <div className="w-14 h-14 bg-black flex items-center justify-center text-white text-[22px] mb-7 transition-colors duration-300 group-hover:bg-red-600 rounded-xl shadow-sm">
+                    <i className={`fas ${service.icon}`}></i>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-3 tracking-tight group-hover:text-red-600 transition-colors duration-300">{service.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-600 mb-6">{service.description}</p>
+                  
+                  <button className="text-[13px] font-semibold text-red-600 inline-flex items-center gap-2 transition-all duration-300 group-hover:gap-3 bg-transparent border-none cursor-pointer p-0 group-hover:translate-x-1">
+                    Pelajari Lebih Lanjut <i className="fas fa-arrow-right"></i>
+                  </button>
                 </div>
-                
-                <h3 className="text-xl font-bold mb-3 tracking-tight">{service.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-600 mb-6">{service.description}</p>
-                
-                <button className="text-[13px] font-semibold text-red-600 inline-flex items-center gap-2 transition-[gap] duration-200 group-hover:gap-3 bg-transparent border-none cursor-pointer p-0">
-                  Pelajari Lebih Lanjut <i className="fas fa-arrow-right"></i>
-                </button>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* Modal Pop-up */}
       {selectedService && (
