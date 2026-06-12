@@ -275,8 +275,8 @@ export default function Services() {
 
   return (
     <>
-      <ScrollReveal className="py-16 md:py-32 bg-gray-50 border-t border-b border-gray-200" direction="none">
-        <div className="w-full max-w-[1280px] mx-auto px-5 md:px-10" id="layanan">
+      <section className="py-16 md:py-32 bg-gray-50 border-t border-b border-gray-200" id="layanan">
+        <div className="w-full max-w-[1280px] mx-auto px-5 md:px-10">
           <ScrollReveal direction="up" delay={0.1} className="text-center max-w-[640px] mx-auto mb-12 md:mb-16">
             <div className="flex items-center gap-2 justify-center text-xs uppercase tracking-[2px] text-red-600 font-bold mb-4">
               <span className="w-5 h-0.5 bg-red-600"></span>
@@ -320,7 +320,7 @@ export default function Services() {
             ))}
           </div>
         </div>
-      </ScrollReveal>
+      </section>
 
       {/* Modal Pop-up */}
       {selectedService && (

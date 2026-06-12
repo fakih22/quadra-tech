@@ -47,7 +47,7 @@ export default function ScrollReveal({
       variants={variants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }} // once: false allows entrance and exit animations repeatedly
+      viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
     >
       {children}
     </motion.div>

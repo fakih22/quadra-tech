@@ -14,7 +14,7 @@ import BackToTop from '@/components/BackToTop/BackToTop';
 
 export default function Home() {
   return (
-    <>
+    <main className="overflow-x-hidden w-full relative">
       <Navbar />
       <Hero />
       <Clients />
@@ -28,6 +28,6 @@ export default function Home() {
       <Contact />
       <Footer />
       <BackToTop />
-    </>
+    </main>
   );
 }
