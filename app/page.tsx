@@ -16,16 +16,16 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden w-full relative">
       <Navbar />
-      <Hero />
+      <section id="beranda"><Hero /></section>
       <Clients />
-      <About />
-      <Services />
+      <section id="tentang"><About /></section>
+      <section id="layanan"><Services /></section>
       <WhyUs />
-      <Portfolio />
-      <Team />
+      <section id="portofolio"><Portfolio /></section>
+      <section id="tim"><Team /></section>
       <Testimonials />
       <CTA />
-      <Contact />
+      <section id="kontak"><Contact /></section>
       <Footer />
       <BackToTop />
     </main>
