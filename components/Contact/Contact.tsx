@@ -39,7 +39,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-[15px] font-bold mb-1.5 tracking-[-0.2px] group-hover:text-red-600 transition-colors">Kantor Pusat</h4>
                   <p className="text-sm text-gray-600 leading-[1.6]">
-                    Jl. Innovation No. 123, Lantai 15<br />Distrik Bisnis, Jakarta 12190
+                    Jl. Sudirman No. 123, Lantai 15<br />Distrik Bisnis, Jakarta 12190
                   </p>
                 </div>
               </ScrollReveal>
