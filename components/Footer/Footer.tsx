@@ -14,7 +14,7 @@ export default function Footer() {
               Quadratech
             </Link>
             <p className="text-sm text-gray-500 leading-[1.7] mt-4 max-w-[300px]">
-              Partner transformasi digital terpercaya di Indonesia. Kami menghadirkan solusi teknologi yang skalabel, aman, dan inovatif untuk era digitalisasi
+              Partner transformasi digital terpercaya di Indonesia. Kami menghadirkan solusi teknologi yang skalabel, aman, dan inovatif untuk era digitalisasi.
             </p>
             <div className="flex gap-0 mt-6">
               <a href="#" className="w-10 h-10 flex items-center justify-center text-gray-500 border border-gray-800 text-base transition-all duration-200 hover:bg-red-600 hover:border-red-600 hover:text-white no-underline">
