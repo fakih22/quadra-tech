@@ -63,7 +63,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-[15px] font-bold mb-1.5 tracking-[-0.2px] group-hover:text-red-600 transition-colors">Email</h4>
                   <p className="text-sm text-gray-600 leading-[1.6]">
-                    hello@quadratech.com<br />sales@quadratech.com
+                    hello@quadratech.com<br />me@quadratech.com
                   </p>
                 </div>
               </ScrollReveal>
