@@ -51,7 +51,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-[15px] font-bold mb-1.5 tracking-[-0.2px] group-hover:text-red-600 transition-colors">Telepon</h4>
                   <p className="text-sm text-gray-600 leading-[1.6]">
-                    +62 21 1234 5678<br />+62 812 3456 7890 (WhatsApp)
+                    +62 21 1234 5678<br />+62 812 3456 7890 (WhatsApps)
                   </p>
                 </div>
               </ScrollReveal>
