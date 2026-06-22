@@ -88,7 +88,7 @@ export default function Contact() {
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-600 to-red-400"></div>
               <h3 className="text-2xl font-bold tracking-[-0.5px] mb-2 mt-2">Kirim Pesan</h3>
               <p className="text-sm text-gray-500 mb-8">
-                Isi formulir di bawah ini dan tim kami akan menghubungi Anda dalam 24 jam
+                Isi formulir di bawah ini dan tim kami akan menghubungi Anda dalam 24 jam.
               </p>
 
               <form onSubmit={handleSubmit}>
